@@ -1,0 +1,37 @@
+.TH METAPDF 1 "Maj 2026" "v1.0" "Podręcznik użytkownika"
+.SH NAZWA
+metapdf \- menedżer metadanych plików PDF
+.SH SKŁADNIA
+.B metapdf
+[\-h] [\-v] [\-u] [\-p] [\-r] [\-a autor] [\-d data] [\-s autor]
+.SH OPIS
+Program służy do analizy, filtrowania i zarządzania plikami PDF w oparciu o ich metadane (autor, data utworzenia, rozmiar, liczba stron). Pozwala na pracę zarówno w terminalu, jak i w trybie graficznym.
+.SH OPCJE
+.IP \-h
+Wyświetla pomocną informację o składni i dostępnych opcjach (usage).
+.IP \-v
+Wyświetla aktualną wersję programu.
+.IP \-u
+Uruchamia tryb graficzny (GUI) z wykorzystaniem narzędzia Zenity. Jeśli nie podano innych akcji, otwiera menu główne.
+.IP \-p
+Generuje podsumowanie statystyczne: liczbę plików, łączny rozmiar na dysku oraz liczbę unikalnych autorów.
+.IP \-r
+Generuje szczegółowy raport tabelaryczny. W terminalu pozwala na wybór sortowania (Nazwa, Autor, Rozmiar, Strony).
+.IP "\-a autor"
+Filtruje listę plików według podanego nazwiska lub frazy autora. Wpływa na wyniki raportu i podsumowania.
+.IP "\-d data"
+Filtruje listę plików według daty utworzenia (format RRRRMMDD lub fragment roku/miesiąca).
+.IP "\-s autor"
+USUWA z dysku pliki PDF, których metadane autora pasują do podanej frazy. Akcja nieodwracalna.
+.SH PRZYKŁADY
+.B metapdf -a "Kowalski" -p
+.IP
+Wyświetli statystyki plików napisanych przez Kowalskiego.
+.B metapdf -u -r
+.IP
+Otworzy szczegółowy raport w oknie graficznym.
+.B metapdf -d "2024" -s "Anonim"
+.IP
+Usunie pliki z 2024 roku, których autorem jest "Anonim".
+.SH AUTOR
+Krzysztof Marchlik
